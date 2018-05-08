@@ -1,0 +1,17 @@
+<h1>Log in to Private Events</h1>
+
+<%= form_for(:session, url: login_path) do |f| %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <br/>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <br/><br/>
+
+    <%= f.submit "Submit" %>
+    <br/>
+
+<% end %>
