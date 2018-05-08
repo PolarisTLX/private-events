@@ -10,4 +10,9 @@
   <%= @user.email %>
 </p>
 
-<%= link_to "Edit Your Profile", edit_user_path(@user) if @user == current_user %>
+
+<%  if @user == current_user %>
+  <%= link_to "Edit Your Profile", edit_user_path(@user)%>
+  <br/><br/>
+  <h3><%= link_to "Create New Event", new_event_path %></h3>
+<% end %>

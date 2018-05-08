@@ -16,10 +16,15 @@ MODEL - Users:
 
 MODEL - Events:
 -belongs_to one Host
+-title
+-description
 -date
 -Location
 -has_many Users invited
 -has_many Users attending (maybe not)
+
+rails generate model Events name:string description:text location:string date:date user:references
+
 
 
 (maybe not a model?)

@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_secure_password  # this takes care of checking the password_confirmation
 
 
+  has_many :hosted_events, foreign_key: "host_id", class_name: "Event"
+
+
   # Needed for the "Remember Me" box feature:
 
   #to store a secure "remember_token" that can't be viewed
