@@ -9,9 +9,16 @@
     <%= f.label :password %>
     <%= f.password_field :password %>
 
+    <%= f.label :remember_me do %>
+      <%= f.check_box :remember_me %>
+      <span>Remember me on this computer</span>
+    <% end %>
+
     <br/><br/>
 
     <%= f.submit "Submit" %>
     <br/>
 
 <% end %>
+
+<p>New user? <%= link_to 'Sign up now!', signup_path %></p>

@@ -7,6 +7,10 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:session][:password])
       log_in user
+
+      # if usesr checks off the "remember me?" box? 1 : else 0
+      # params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+
       redirect_to user
     else
       flash.now[:danger] = "Invalid login credentials"

@@ -5,4 +5,7 @@ class User < ApplicationRecord
   # validates :password, presence: true, length: {minimum: 8, maximum: 25 }
   has_secure_password  # this takes care of checking the password_confirmation
 
+
+  
+
 end

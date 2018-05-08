@@ -10,4 +10,4 @@
   <%= @user.email %>
 </p>
 
-<%= link_to "Edit Your Profile", edit_user_path(@user) %>
+<%= link_to "Edit Your Profile", edit_user_path(@user) if @user == current_user %>
