@@ -1,0 +1,29 @@
+Private Events Models:
+
+-New Users can sign up to join the site
+-User can create multiple Events
+-Users can invite multiple other Users
+-Users can attend multiple Events
+
+-Events have have many Users attending
+
+MODEL - Users:
+-name
+-email
+-password_digest
+-has_many Events created
+-has_many invites to others' Events
+
+MODEL - Events:
+-belongs_to one Host
+-date
+-Location
+-has_many Users invited
+-has_many Users attending (maybe not)
+
+
+(maybe not a model?)
+Invites have:
+-belong_to Event_id
+-belongs_to Users invited
+-each User Accepted (True/False)
