@@ -20,15 +20,13 @@ MODEL - Events:
 -description
 -date
 -Location
--has_many Users invited
+-has_many Invites (each user)
 -has_many Users attending (maybe not)
 
 rails generate model Events name:string description:text location:string date:date user:references
 
 
-
-(maybe not a model?)
-Invites have:
--belong_to Event_id
--belongs_to Users invited
--each User Accepted (True/False)
+MODEL - Invites:
+-belongs_to Event_id (renamed to attended_event)
+-belongs_to User_id (renamed to attendee)
+-column Accepted (True/False for each User)
