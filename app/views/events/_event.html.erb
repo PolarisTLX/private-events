@@ -1,0 +1,7 @@
+<li style="list-style: none;">
+  <p>Event: <%= link_to event.title, event %> </p>
+  <p>Host: <%= User.find(event.host_id).name %> </p>
+  <p>Date: <%= event.date %> </p>
+  <p>Place: <%= event.location %> </p>
+  <br/>
+</li>

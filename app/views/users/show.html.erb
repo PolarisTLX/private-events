@@ -16,3 +16,14 @@
   <br/><br/>
   <h3><%= link_to "Create New Event", new_event_path %></h3>
 <% end %>
+
+<% if @user.hosted_events.count > 0 %>
+  <h2>Hosted Events:</h2>
+<% end %>
+<% @user.hosted_events.each do |event| %>
+<p>
+  Event Title: <%= link_to event.title, event %><br/>
+  Event Location: <%= event.location %><br/>
+  Event Date: <%= event.date %>
+</p>
+<% end %>
