@@ -2,8 +2,8 @@ class User < ApplicationRecord
 
   attr_accessor :remember_token
 
-  has_many :hosted_events, foreign_key: "host_id", class_name: "Event"
-  has_many :invites, foreign_key: "attendee_id"
+  has_many :hosted_events, foreign_key: :host_id, class_name: 'Event'
+  has_many :invites, foreign_key: :attendee_id
   has_many :attended_events, through: :invites
 
 

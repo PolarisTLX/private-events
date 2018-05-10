@@ -26,16 +26,13 @@ class EventsController < ApplicationController
       # The value is 1 when box is checked, 0 if empty.
       params[:invite].each do |user_id, value|
         # make invite for user_id if value == 1
-        if value == 1
-          invite = @event.invites.build(attendee_id:user_id)
-          # Our events have 3 values:
-          # -attended_event_id, (which is taken care of by "@event.invites.build")
-          # -attendee_id
-          # -accepted (which is defaulted to false)
-          invite.save
-        end
-
-
+        next unless value == 1
+        @invite = @event.invites.build(attendee_id: user_id)
+        # Our events have 3 values:
+        # -attended_event_id, (which is taken care of by "@event.invites.build")
+        # -attendee_id
+        # -accepted (which is defaulted to false)
+        @invite.save
       end
 
       flash[:success] = "Your event has been created!"
