@@ -27,3 +27,21 @@
   Date: <%= event.date %>
 </p>
 <% end %>
+
+
+<%  if @user == current_user %>
+    <% if @user.invites.where(accepted: false).count > 0 %>
+      <h2>Events Invitations:</h2>
+    <% end %>
+    <% @user.invites.where(accepted: false).each do |invite| %>
+      <p>
+
+        <% event = Event.find(invite.attended_event_id) %>
+
+        Title: <%= link_to event.title, event %><br/>
+        Location: <%= event.location %><br/>
+        Date: <%= event.date %>
+      </p>
+      <h4><%= link_to "Accept Invitation", edit_invite_path(invite) %></h4>
+    <% end %>
+<% end %>

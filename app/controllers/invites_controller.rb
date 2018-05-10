@@ -27,6 +27,13 @@ class InvitesController < ApplicationController
     redirect_to @event
   end
 
+  # GET action to flip the state of the accepted stated of the invite (perhaps should be update)
+  def edit
+    @invite = Invite.find(params[:id])
+    @invite.update_columns(accepted: !@invite.accepted)
+    redirect_to current_user
+  end
+
 
   private
 
