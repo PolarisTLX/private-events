@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to the Private Events app!"
+      flash[:success] = 'Welcome to the Private Events app!'
       redirect_to @user
     end
   end
@@ -25,6 +25,12 @@ class UsersController < ApplicationController
   # GET action to show the profile of an existing user
   def show
     @user = User.find(params[:id])
+    @invites = @user.attended_events.where("invites.accepted = ?", false).upcoming
+    #@past_events = @user.attended_events.where("date < ?", Date.today).order(date: "DESC")
+    @past_events = @user.attended_events.past
+    # @upcoming_events = @user.attended_events.where("invites.accepted = ?", true)
+    #                                         .where("date >= ?", Date.today)
+    @upcoming_events = @user.attended_events.where("invites.accepted = ?", true).upcoming
   end
 
   # GET action to show the user edit page

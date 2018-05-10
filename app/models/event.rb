@@ -5,7 +5,11 @@ class Event < ApplicationRecord
   has_many :attendees, through: :invites
 
   # default_scope -> { order(created_at: :asc) }
-  default_scope -> { order(date: :asc) }
+  #default_scope -> { order(date: :asc) }
+
+  scope :upcoming, -> { where("date >= ?", Date.today).order(date: :asc) }
+  scope :past, -> { where("date < ?", Date.today).order(date: :desc) }
+
 
   validates :title, presence: true, length: {minimum: 4, maximum: 50 }
   validates :description, presence: true, length: {minimum: 3, maximum: 1000 }
