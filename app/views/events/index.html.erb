@@ -1,3 +1,27 @@
-<ul>
-  <%= render @events %>
-</ul>
+<% if @past_events.count > 0 %>
+  <h2>Past Events:</h2>
+<% end %>
+<% @past_events.each do |event| %>
+  <h3><strong>Event:</strong> <%= event.title %></h3>
+  <% if logged_in? %>
+  <p><strong>Host:</strong><%= User.find(event.host_id).name %><p>
+    <% end %>
+  <p><strong>Where:</strong> <%= event.location %></p>
+  <p><strong>When:</strong> <%= event.date %></p>
+  <br/>
+<% end %>
+
+
+
+<% if @upcoming_events.count > 0 %>
+  <h2>Upcoming Events:</h2>
+<% end %>
+<% @upcoming_events.each do |event| %>
+  <h3><strong>Event:</strong> <%= event.title %></h3>
+  <% if logged_in? %>
+  <p><strong>Host:</strong><%= User.find(event.host_id).name %><p>
+    <% end %>
+  <p><strong>Where:</strong> <%= event.location %></p>
+  <p><strong>When:</strong> <%= event.date %></p>
+  <br/>
+<% end %>
