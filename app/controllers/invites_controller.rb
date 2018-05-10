@@ -7,7 +7,7 @@ class InvitesController < ApplicationController
 
   # GET request
   def new
-    @user = current_user #(needed for every GET request)
+    @user = current_user # (needed for every GET request)
 
     # to show the event this is tied to
     @event = Event.find(session[:event_id])
@@ -19,11 +19,12 @@ class InvitesController < ApplicationController
   def create
     # this is to carry over the event that these invites will be associated with:
     @event = Event.find(session[:event_id])
+    params[:invite][:attendee].each do |i|
+      invite = @event.invites.build(attendee_id: i.to_i)
+      invite.save
+    end
 
-
-    # params[:invite].each do |invite|
-
-
+    redirect_to @event
   end
 
 

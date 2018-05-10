@@ -11,8 +11,9 @@
         <% next if u == current_user %>
         <!-- check if user has already been invited: -->
         <% next if @event.invites.where(attendee_id: u).any? %>
-        <li> <input id=<%= "invite[#{u.id}]" %> name=<%= "invite[#{u.id.to_s}]" %> type='checkbox' value='1' />
-        <%= u.name %></li>
+        <!-- 'nil' below keeps unchecked boxes from being sent in the params to the create action -->
+        <%= f.check_box(:attendee, {multiple: true}, u.id.to_s, nil) %>
+        <%= f.label(:attendee, u.name) %><br>
       <% end %>
     </ul>
     <br/><br/>

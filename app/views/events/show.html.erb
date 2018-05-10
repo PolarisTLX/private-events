@@ -6,3 +6,19 @@
 
 
 <h3><%= link_to "Invite people", new_invite_path%></h3>
+
+<h4> Confirmed Attendees </h4>
+<ul style="list-style: none">
+  <% @attendees.each do |a| %> <!-- from events_controller#show -->
+    <li><%= User.find(a.attendee_id).name %></li>
+  <% end %>
+</ul>
+
+<br/>
+
+<h4> Others Invited </h4>
+<ul style="list-style: none">
+<% @invited.each do |i| %> <!-- from events_controller#show -->
+  <li><%= User.find(i.attendee_id).name %></li>
+<% end %>
+</ul>
