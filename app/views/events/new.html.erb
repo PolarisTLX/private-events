@@ -33,19 +33,7 @@
     <%= f.label :date %>
     <%= f.date_field :date %>
 
-    <br/><br/>
-
-    <h4> What members will be on your guest list? </h4>
-
-    <ul style="list-style:none">
-      <% User.all.each do |u| %>
-        <% next if u == current_user %> <!-- Makes sure current user does not have an option to invite themselves -->
-        <li> <input id=<%= "invite[#{u.id}]" %> name=<%= "invite[#{u.id}]" %> type='checkbox' value='1' />
-        <%= u.name %></li>
-      <% end %>
-    </ul>
-    <br/><br/>
-
+    <br/><br/>    
 
     <%= f.submit "Submit Your New Event" %>
 

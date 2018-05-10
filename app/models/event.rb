@@ -4,7 +4,8 @@ class Event < ApplicationRecord
   has_many :invites, foreign_key: :attended_event_id
   has_many :attendees, through: :invites
 
-  default_scope -> { order(created_at: :asc) }
+  # default_scope -> { order(created_at: :asc) }
+  default_scope -> { order(date: :asc) }
 
   validates :title, presence: true, length: {minimum: 4, maximum: 50 }
   validates :description, presence: true, length: {minimum: 3, maximum: 1000 }

@@ -1,11 +1,40 @@
 class InvitesController < ApplicationController
-  def new
 
+  # this is a filter to restrict access to only a user who is logged in.
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+
+  # NOTE need to prepare a before_action if they don't come from an event page. redirect user
+
+  # GET request
+  def new
+    @user = current_user #(needed for every GET request)
+
+    # to show the event this is tied to
+    @event = Event.find(session[:event_id])
+
+    # this is same as @invite = Invite.new (but we are filling in the event_id)
+    @invite = @event.invites.build
   end
 
   def create
+    # this is to carry over the event that these invites will be associated with:
+    @event = Event.find(session[:event_id])
+
+
     # params[:invite].each do |invite|
 
+
+  end
+
+
+  private
+
+  # This is the check to allow the authorisation of a user's access
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
   end
 
 end

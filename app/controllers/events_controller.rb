@@ -13,6 +13,10 @@ class EventsController < ApplicationController
   def show
     @user = current_user
     @event = Event.find(params[:id])
+
+    # need to store event to carry over to invite guests page:
+    # need to store a cookie to do this
+    session[:event_id] = @event.id
   end
 
   # POST request
@@ -22,18 +26,18 @@ class EventsController < ApplicationController
 
     if @event.save
 
-      # For the invites. Each user that has been checked off, need to send them an invite.
-      # The value is 1 when box is checked, 0 if empty.
-      params[:invite].each do |user_id, value|
-        # make invite for user_id if value == 1
-        next unless value == 1
-        @invite = @event.invites.build(attendee_id: user_id)
-        # Our events have 3 values:
-        # -attended_event_id, (which is taken care of by "@event.invites.build")
-        # -attendee_id
-        # -accepted (which is defaulted to false)
-        @invite.save
-      end
+      # # For the invites. Each user that has been checked off, need to send them an invite.
+      # # The value is 1 when box is checked, 0 if empty.
+      # params[:invite].each do |user_id, value|
+      #   # make invite for user_id if value == 1
+      #   next unless value == 1
+      #   @invite = @event.invites.build(attendee_id: user_id)
+      #   # Our events have 3 values:
+      #   # -attended_event_id, (which is taken care of by "@event.invites.build")
+      #   # -attendee_id
+      #   # -accepted (which is defaulted to false)
+      #   @invite.save
+      # end
 
       flash[:success] = "Your event has been created!"
       redirect_to @event

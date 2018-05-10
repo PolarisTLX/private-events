@@ -22,8 +22,8 @@
 <% end %>
 <% @user.hosted_events.each do |event| %>
 <p>
-  Event Title: <%= link_to event.title, event %><br/>
-  Event Location: <%= event.location %><br/>
-  Event Date: <%= event.date %>
+  Title: <%= link_to event.title, event %><br/>
+  Location: <%= event.location %><br/>
+  Date: <%= event.date %>
 </p>
 <% end %>
