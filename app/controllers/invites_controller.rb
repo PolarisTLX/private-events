@@ -3,7 +3,8 @@ class InvitesController < ApplicationController
 
   end
   def create
-
+    params[:invite].each do |invite|
+      
   end
-  
+
 end

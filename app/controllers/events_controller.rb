@@ -20,6 +20,8 @@ class EventsController < ApplicationController
     # @post = current_user.events.build(event_params)
     @event = current_user.hosted_events.build(event_params)
 
+    params[:invite]
+
     if @event.save
       flash[:success] = "Your event has been created!"
       redirect_to @event
