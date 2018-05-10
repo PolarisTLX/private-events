@@ -20,9 +20,24 @@ class EventsController < ApplicationController
     # @post = current_user.events.build(event_params)
     @event = current_user.hosted_events.build(event_params)
 
-    params[:invite]
-
     if @event.save
+
+      # For the invites. Each user that has been checked off, need to send them an invite.
+      # The value is 1 when box is checked, 0 if empty.
+      params[:invite].each do |user_id, value|
+        # make invite for user_id if value == 1
+        if value == 1
+          invite = @event.invites.build(attendee_id:user_id)
+          # Our events have 3 values:
+          # -attended_event_id, (which is taken care of by "@event.invites.build")
+          # -attendee_id
+          # -accepted (which is defaulted to false)
+          invite.save
+        end
+
+
+      end
+
       flash[:success] = "Your event has been created!"
       redirect_to @event
     else

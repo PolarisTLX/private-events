@@ -35,6 +35,8 @@
 
     <br/><br/>
 
+    <h4> What members will be on your guest list? </h4>
+
     <ul style="list-style:none">
       <% User.all.each do |u| %>
         <% next if u == current_user %> <!-- Makes sure current user does not have an option to invite themselves -->
@@ -42,6 +44,7 @@
         <%= u.name %></li>
       <% end %>
     </ul>
+    <br/><br/>
 
 
     <%= f.submit "Submit Your New Event" %>
