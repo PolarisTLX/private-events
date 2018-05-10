@@ -22,3 +22,5 @@
   <li><%= User.find(i.attendee_id).name %></li>
 <% end %>
 </ul>
+
+<h3><%= link_to "Delete Event", event_path(@event), method: :delete %></h3>

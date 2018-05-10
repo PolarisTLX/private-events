@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
 
-  belongs_to :host, class_name: "User", dependent: :destroy
-  has_many :invites, foreign_key: :attended_event_id
+  belongs_to :host, class_name: "User"
+  has_many :invites, foreign_key: :attended_event_id, dependent: :destroy
   has_many :attendees, through: :invites
 
   # default_scope -> { order(created_at: :asc) }
