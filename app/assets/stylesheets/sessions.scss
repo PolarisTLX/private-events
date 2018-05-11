@@ -3,12 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: auto;
+
   grid-template-areas:
-    "navlinks navlinks"
-    "login login"
+    "navlinks navlinks navlinks navlinks"
+    "title title title title"
+    "login login empty empty"
+}
+
+.title {
+  grid-area: title;
+  text-align: center;
 }
 
 .login {
@@ -21,85 +25,69 @@ body {
 }
 
 
-
-form input[type=submit] {
-  background-color: rgb(35,35,35);
-  border: none;
-  border-top: 2px solid rgb(120,120,120);
-  border-left: 2px solid rgb(120,120,120);
-}
-
-form input[type=submit]:hover {
-  // background-color: rgb(120,120,120);
-  // color: rgb(35,35,35);
-  border: none;
-  border-bottom: 3px solid rgb(120,120,120);
-  border-right: 3px solid rgb(120,120,120);
-}
-
-body {
-  background-color: rgb(35, 35, 35);
-  color: rgb(120, 120, 120);
-}
-
 /* first hide the standard checkbox */
 input[type=checkbox] {
   visibility: hidden;
 }
 
+// form span {
+//   display: inline;
+// }
+
 .remember-me-div {
-    width: 120px;
-    height: 40px;
+    width: 9vw;
+    height: 3vw;
     background: rgb(35, 35, 35);
-    margin: 20px 60px;
+    margin: 1.5vw 4.5vw;
     border: none;
     border-right: solid 1px rgb(120, 120, 120);
     border-bottom: solid 1px rgb(120, 120, 120);
-    border-radius: 50px;
+    border-radius: 4vw;
     /* border-color: rgb(120, 120, 120); */
     position: relative;
+    transform: translate(5vw, -4.5vw);
 }
 
 .remember-me-div:before {
-    content: 'Oui';
-    position: absolute;
-    top: 12px;
-    left: 13px;
-    height: 2px;
-    color: rgb(120, 120, 120);
-    font-size: 16px;
+  content: 'Oui';
+  position: absolute;
+  top: .9vw;
+  left: .9vw;
+  height: .15vw;
+  color: rgb(120, 120, 120);
+  font-size: 1.25vw;
 }
 
 .remember-me-div:after {
     content: 'Non';
     position: absolute;
-    top: 12px;
-    left: 84px;
-    height: 2px;
+    top: .9vw;
+    left: 6.3vw;
+    height: .15vw;
     color: rgb(120, 120, 120);
-    font-size: 16px;
+    font-size: 1.25vw;
 }
 
 /* The pill that rests on top to click */
 .remember-me-div label {
   display: block;
-  width: 52px;
-  height: 22px;
-  height: 22px;
-  border-radius: 50px;
+  width: 4vw;
+  height: 1.65vw;
+  // height: 1.65vw;
+  border-radius: 4vw;
 
   transition: all .5s ease;
   cursor: pointer;
   position: absolute;
-  top: 9px;
+  top: .7vw;
   z-index: 1;
-  left: 12px;
+  left: .9vw;
   background: rgb(120, 120, 120);
 }
 
 /* checkbox event for the label: */
 .remember-me-div input[type=checkbox]:checked + label {
-  left: 60px;
+  left: 4.5vw;
   background: rgb(120, 120, 120);
 }
 

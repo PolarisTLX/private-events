@@ -3,14 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: auto;
   grid-template-areas:
-    "navlinks navlinks"
-    "past upcoming"
-    "past upcoming"
-    "past upcoming";
+    "navlinks navlinks navlinks navlinks"
+    "past past upcoming upcoming"
+    "past past upcoming upcoming"
+    "past past upcoming upcoming";    
 }
 
 .navlinks {

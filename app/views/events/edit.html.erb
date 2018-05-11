@@ -16,7 +16,7 @@
 <%= form_for @event do |f| %>
 
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, autocomplete: "off" %>
 
     <br/><br/>
 
@@ -26,7 +26,7 @@
     <br/><br/>
 
     <%= f.label :location %>
-    <%= f.text_field :location %>
+    <%= f.text_field :location, autocomplete: "off" %>
 
     <br/><br/>
 
