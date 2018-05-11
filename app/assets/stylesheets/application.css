@@ -27,15 +27,48 @@ body {
 /* p, h1, h2, h3, h4, h5, h6 {
    border-bottom: 1px solid rgb(120,120,120);
 } */
+a {
+  text-decoration: none;
+}
 a:visited {
   color: rgb(120,120,120)
 }
+
+a:hover {
+  color: rgb(51,139,213);
+  /* background-color: rgb(51,139,213); */
+}
+
+
+
 p {
   font-weight: bold;
 }
 strong {
   font-weight: bolder;
 }
+
+form input[type=text] {
+  font-family: 'Calligraffitti', cursive;
+  /* background-color: rgb(35,35,35);
+  color: rgb(120,120,120); */
+}
+
+form input[type=text], input[type=password] {
+  background-color: rgb(35,35,35);
+  border: none;
+  border-bottom: 1px solid rgb(120,120,120);
+}
+
+form input {
+  color: rgb(120,120,120);
+}
+
+form input:focus {
+  outline: none;
+}
+
+
 .navlinks {
   text-align: center;
   padding-bottom: 3vw;;
@@ -45,12 +78,25 @@ strong {
   margin: 0 4vw;
   text-decoration: none;
 }
-.navlinks a:hover {
+/* .navlinks a:hover {
   color: rgb(51,139,213);
+} */
+
+
+/* Change autocomplete styles in WebKit */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background-color: rgb(35,35,35);
+  -webkit-text-fill-color: rgb(120,120,120);
 }
-
-
-
 
 
  /*

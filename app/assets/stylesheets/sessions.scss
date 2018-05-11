@@ -20,28 +20,16 @@ body {
   grid-area: navlinks;
 }
 
-form input[type=text], input[type=password] {
-  background-color: rgb(35,35,35);
-  border: none;
-  border-bottom: 1px solid rgb(120,120,120);
-}
 
-form input {
-  color: rgb(120,120,120);
-}
 
-form input:focus {
-  outline: none;
-}
-
-form input[type=submit]{
+form input[type=submit] {
   background-color: rgb(35,35,35);
   border: none;
   border-top: 2px solid rgb(120,120,120);
   border-left: 2px solid rgb(120,120,120);
 }
 
-form input[type=submit]:hover{
+form input[type=submit]:hover {
   // background-color: rgb(120,120,120);
   // color: rgb(35,35,35);
   border: none;
@@ -49,52 +37,75 @@ form input[type=submit]:hover{
   border-right: 3px solid rgb(120,120,120);
 }
 
-.remember {
+body {
+  background-color: rgb(35, 35, 35);
+  color: rgb(120, 120, 120);
+}
+
+/* first hide the standard checkbox */
+input[type=checkbox] {
+  visibility: hidden;
+}
+
+.remember-me-div {
     width: 120px;
     height: 40px;
-    background: #333;
+    background: rgb(35, 35, 35);
     margin: 20px 60px;
-
+    border: none;
+    border-right: solid 1px rgb(120, 120, 120);
+    border-bottom: solid 1px rgb(120, 120, 120);
     border-radius: 50px;
+    /* border-color: rgb(120, 120, 120); */
     position: relative;
 }
 
-.remember:before {
-    content: 'On';
+.remember-me-div:before {
+    content: 'Oui';
     position: absolute;
     top: 12px;
     left: 13px;
     height: 2px;
-    color: #26ca28;
+    color: rgb(120, 120, 120);
     font-size: 16px;
 }
 
-.remember:after {
-    content: 'Off';
+.remember-me-div:after {
+    content: 'Non';
     position: absolute;
     top: 12px;
     left: 84px;
     height: 2px;
-    color: #111;
+    color: rgb(120, 120, 120);
     font-size: 16px;
 }
 
-.remember label {
-    display: block;
-    width: 52px;
-    height: 22px;
-    border-radius: 50px;
+/* The pill that rests on top to click */
+.remember-me-div label {
+  display: block;
+  width: 52px;
+  height: 22px;
+  height: 22px;
+  border-radius: 50px;
 
-    transition: all .5s ease;
-    cursor: pointer;
-    position: absolute;
-    top: 9px;
-    z-index: 1;
-    left: 12px;
-    background: #ddd;
+  transition: all .5s ease;
+  cursor: pointer;
+  position: absolute;
+  top: 9px;
+  z-index: 1;
+  left: 12px;
+  background: rgb(120, 120, 120);
 }
 
-.remember input[type=checkbox]:checked + label {
-    left: 60px;
-    background: #26ca28;
+/* checkbox event for the label: */
+.remember-me-div input[type=checkbox]:checked + label {
+  left: 60px;
+  background: rgb(120, 120, 120);
 }
+
+/* not working CSS4 */
+// .remember-me-div input[type=checkbox]:checked {
+//   border: none;
+//   border-left: solid 1px red;
+//   border-top: solid 1px rgb(120, 120, 120);
+// }
