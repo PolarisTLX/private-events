@@ -47,8 +47,9 @@ body {
 /* .navlinks a:hover {
 color: rgb(51,139,213);
 } */
-p, h1, h2, h3, h4, h5, h6, form, form input {
+p, h1, h2, h3, h4, h5, h6, form, form input, a {
   font-weight: bold;
+  color: rgb(120,120,120);
 }
 h1 {
   font-size: 4vw;
@@ -81,6 +82,10 @@ a:hover {
 form {
   font-size: 1.5vw;
   text-align: right;
+}
+.input-label {
+  /* transform: translateX(-20vw); */
+  margin-right: 1vw;
 }
 
 form input {

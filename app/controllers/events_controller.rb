@@ -15,7 +15,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @attendees = @event.attendees.where("invites.accepted = ?", true)
     @invited = @event.attendees.where("invites.accepted = ?", false)
-
     # need to store event to carry over to invite guests page:
     # need to store a cookie to do this
     session[:event_id] = @event.id
@@ -27,6 +26,7 @@ class EventsController < ApplicationController
     @event = current_user.hosted_events.build(event_params)
 
     if @event.save
+      @event.invites.create(attendee_id: current_user.id, accepted: true)
       flash[:success] = "Your event has been created!"
       redirect_to @event
     else
