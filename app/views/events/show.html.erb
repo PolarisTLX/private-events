@@ -7,20 +7,24 @@
 
 <h3><%= link_to "Invite people", new_invite_path%></h3>
 
+<div class="confirmed">
 <h4> Confirmed Attendees </h4>
 <ul style="list-style: none">
   <% @attendees.each do |a| %> <!-- from events_controller#show -->
-    <li><%= User.find(a.attendee_id).name %></li>
+    <li><%= a.name %></li>
   <% end %>
 </ul>
+</div>
 
 <br/>
 
+<div class="unconfirmed">
 <h4> Others Invited </h4>
 <ul style="list-style: none">
 <% @invited.each do |i| %> <!-- from events_controller#show -->
-  <li><%= User.find(i.attendee_id).name %></li>
+  <li><%= i.name %></li>
 <% end %>
 </ul>
+</div>
 
 <h3><%= link_to "Delete Event", event_path(@event), method: :delete %></h3>

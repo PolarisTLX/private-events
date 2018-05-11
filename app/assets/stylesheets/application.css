@@ -27,6 +27,14 @@ body {
   grid-template-rows: auto;
 }
 
+/* overiding default highlight of selected text */
+::selection {
+  background: rgb(255,255,255); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: rgb(255,255,255); /* Gecko Browsers */
+}
+
 .navlinks {
   text-align: center;
   padding-bottom: 3vw;;
@@ -39,16 +47,16 @@ body {
 /* .navlinks a:hover {
 color: rgb(51,139,213);
 } */
-/* p, h1, h2, h3, h4, h5, h6 {
-   border-bottom: 1px solid rgb(120,120,120);
-} */
+p, h1, h2, h3, h4, h5, h6, form, form input {
+  font-weight: bold;
+}
 h1 {
   font-size: 4vw;
 }
 
 
 p {
-  font-weight: bold;
+
   font-size: 1.5vw;
 }
 

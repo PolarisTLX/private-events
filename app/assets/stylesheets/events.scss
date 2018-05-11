@@ -3,23 +3,30 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  grid-template-areas:
-    "navlinks navlinks navlinks navlinks"
-    "past past upcoming upcoming"
-    "past past upcoming upcoming"
-    "past past upcoming upcoming";    
+  // grid-template-areas:
+  //   "navlinks navlinks navlinks navlinks"
+  //   "past past upcoming upcoming"
+  //   "past past upcoming upcoming"
+  //   "past past upcoming upcoming";
 }
 
 .navlinks {
   grid-area: navlinks;
 }
 .past {
-  grid-area: past;
+  grid-area: 2 / 1 / 5 / 3 ;
   padding: 0 3vw;
 }
 .upcoming {
-  grid-area: upcoming;
+  grid-area: 2 / 3 / 5 / 5 ;
   padding: 0 3vw;
+}
+
+.confirmed {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.unconfirmed {
+  grid-area: 3 / 2 / 4 / 3;
 }
 
 h2, h3 {
@@ -34,4 +41,12 @@ h2 {
 h3 {
   color: rgb(51,139,213);
   font-size: 4vw;
+}
+
+p {
+  font-size: 2vw;
+}
+
+input[type=checkbox] {
+  visibility: visible;
 }

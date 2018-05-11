@@ -13,6 +13,8 @@ class EventsController < ApplicationController
   def show
     @user = current_user
     @event = Event.find(params[:id])
+    @attendees = @event.attendees.where("invites.accepted = ?", true)
+    @invited = @event.attendees.where("invites.accepted = ?", false)
 
     # need to store event to carry over to invite guests page:
     # need to store a cookie to do this
