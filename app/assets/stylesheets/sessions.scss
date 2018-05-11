@@ -1,3 +1,27 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "navlinks navlinks"
+    "login login"
+}
+
+.login {
+  grid-area: login;
+  padding-left: 20vw;
+}
+
+.navlinks {
+  grid-area: navlinks;
+}
+
+form input {
+  background-color: rgb(35,35,35);
+  border: none;
+  border-bottom: 1px solid rgb(120,120,120);
+}

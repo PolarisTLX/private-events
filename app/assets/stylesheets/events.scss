@@ -1,3 +1,40 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "navlinks navlinks"
+    "past upcoming"
+    "past upcoming"
+    "past upcoming";
+}
+
+.navlinks {
+  grid-area: navlinks;
+}
+.past {
+  grid-area: past;
+  padding: 0 3vw;
+}
+.upcoming {
+  grid-area: upcoming;
+  padding: 0 3vw;
+}
+
+h2, h3 {
+   border-bottom: 1px solid rgb(120,120,120);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 5vw;
+}
+
+h3 {
+  color: rgb(51,139,213);
+  font-size: 4vw;
+}

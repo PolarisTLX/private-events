@@ -1,3 +1,4 @@
+<div class="past">
 <% if @past_events.count > 0 %>
   <h2>Past Events:</h2>
 <% end %>
@@ -10,9 +11,10 @@
   <p><strong>When:</strong> <%= event.date %></p>
   <br/>
 <% end %>
+</div>
 
 
-
+<div class="upcoming">
 <% if @upcoming_events.count > 0 %>
   <h2>Upcoming Events:</h2>
 <% end %>
@@ -25,3 +27,4 @@
   <p><strong>When:</strong> <%= event.date %></p>
   <br/>
 <% end %>
+</div>

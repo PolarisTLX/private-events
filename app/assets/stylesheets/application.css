@@ -13,3 +13,55 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: rgb(35,35,35);
+  color: rgb(120,120,120);
+  font-family: 'Calligraffitti', cursive;
+  /* display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: auto; */
+  letter-spacing: 2;
+
+}
+/* p, h1, h2, h3, h4, h5, h6 {
+   border-bottom: 1px solid rgb(120,120,120);
+} */
+a:visited {
+  color: rgb(120,120,120)
+}
+p {
+  font-weight: bold;
+}
+strong {
+  font-weight: bolder;
+}
+.navlinks {
+  text-align: center;
+  padding-bottom: 3vw;;
+}
+.navlinks a {
+  font-size: 4vw;
+  margin: 0 4vw;
+  text-decoration: none;
+}
+.navlinks a:hover {
+  color: rgb(51,139,213);
+}
+
+
+
+
+
+ /*
+
+ background-color:  dark-grey:     rgb(35,35,35);
+ font- primary color:  light-grey: rgb(120,120,120);
+
+ blue: rgb(51,139,213)
+ dark blue: rgb(45,31,147)
+ grey: rgb(65,65,65)
+ dark grey: rgb(46,46,46)
+ black: rgb(27,27,27)
+ dark red: rgb(64,0,0)
+ red: rgb(128,0,0) */
