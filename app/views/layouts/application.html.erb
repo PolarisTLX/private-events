@@ -14,13 +14,14 @@
   <body>
     <p class="navlinks">
       <% if !logged_in? %>
+        <%= link_to 'Events', events_path%>
         <%= link_to 'Log in', login_path%>
       <% else %>
+          <%= link_to 'Home', user_path(current_user)%>
+          <%= link_to 'Events', events_path%>
           Logged in as: <%= current_user.name %>
-          <%= link_to 'HOME', user_path(current_user)%>
           <%= link_to 'Log out', logout_path, method: :delete %>
       <% end %>
-      <%= link_to 'Events', events_path%>
     </p>
 
     <% flash.each do |message_type, message| %>

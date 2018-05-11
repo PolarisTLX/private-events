@@ -12,8 +12,11 @@ body {
 }
 
 .login {
-  grid-area: 3 / 1 / 4 / 3;
-  padding-left: 20vw;
+  grid-area: 3 / 2 / 4 / 4;
+  grid-area: 3 / 2 / 4 / 4;
+  padding-top: 5vh;
+  transform: translateX(-15vw);
+  // padding-left: 20vw;
 }
 
 .navlinks {
@@ -22,7 +25,7 @@ body {
 
 
 /* first hide the standard checkbox */
-.remember-me-div input[type=checkbox] {
+.remember-me-button input[type=checkbox] {
   visibility: hidden;
 }
 
@@ -30,66 +33,88 @@ body {
 //   display: inline;
 // }
 
-.remember-me-div {
-    width: 9vw;
-    height: 3vw;
+.remember-all {
+  position: relative;
+  height: 10vh;
+}
+.remember-span {
+  position: absolute;
+  top: 0vh;
+  right: 5vh;
+}
+
+.remember-me-button {
+    width: 9vh;
+    height: 3vh;
     background: rgb(35, 35, 35);
-    margin: 1.5vw 4.5vw;
+    // margin: 1.5vh 4.5vh;
     border: none;
     border-right: solid 1px rgb(120, 120, 120);
     border-bottom: solid 1px rgb(120, 120, 120);
-    border-radius: 4vw;
+    border-radius: 4vh;
     /* border-color: rgb(120, 120, 120); */
-    position: relative;
-    transform: translate(5vw, -4.5vw);
+    position: absolute;
+    top: 0;
+    right: 25vh;
+    // transform: translate(15vw, -5.5vh);
 }
 
-.remember-me-div:before {
+.remember-me-button:before {
   content: 'Oui';
   position: absolute;
-  top: .9vw;
-  left: .9vw;
-  height: .15vw;
+  top: .9vh;
+  left: .9vh;
+  height: .15vh;
   color: rgb(120, 120, 120);
-  font-size: 1.25vw;
+  font-size: 1.25vh;
 }
 
-.remember-me-div:after {
+.remember-me-button:after {
     content: 'Non';
     position: absolute;
-    top: .9vw;
-    left: 6.3vw;
-    height: .15vw;
+    top: .9vh;
+    left: 6.3vh;
+    height: .15vh;
     color: rgb(120, 120, 120);
-    font-size: 1.25vw;
+    font-size: 1.25vh;
 }
 
 /* The pill that rests on top to click */
-.remember-me-div label {
+.remember-me-button label {
   display: block;
-  width: 4vw;
-  height: 1.65vw;
-  // height: 1.65vw;
-  border-radius: 4vw;
+  width: 4vh;
+  height: 1.65vh;
+  // height: 1.65vh;
+  border-radius: 4vh;
 
   transition: all .5s ease;
   cursor: pointer;
   position: absolute;
-  top: .7vw;
+  top: .7vh;
   z-index: 1;
-  left: .9vw;
+  left: .9vh;
   background: rgb(120, 120, 120);
 }
 
 /* checkbox event for the label: */
-.remember-me-div input[type=checkbox]:checked + label {
-  left: 4.5vw;
+.remember-me-button input[type=checkbox]:checked + label {
+  left: 4.5vh;
   background: rgb(120, 120, 120);
 }
 
 /* not working CSS4 */
-// .remember-me-div input[type=checkbox]:checked {
+// .remember-me-button input[type=checkbox]:checked {
 //   border: none;
 //   border-left: solid 1px red;
 //   border-top: solid 1px rgb(120, 120, 120);
 // }
+
+.login-submit {
+  transform: translate(-18vh);
+}
+
+.new-user {
+  // text-align: center;
+  transform: translate(-13vh);
+
+}

@@ -37,10 +37,13 @@ body {
 
 .navlinks {
   text-align: center;
-  padding-bottom: 3vw;;
+  padding-bottom: 3vh;;
+  font-size: 3vh;
+}
+.navlinks p {
 }
 .navlinks a {
-  font-size: 3vw;
+  font-size: 3vh;
   margin: 0 4vw;
   text-decoration: none;
 }
@@ -52,13 +55,13 @@ p, h1, h2, h3, h4, h5, h6, form, form input, a {
   color: rgb(120,120,120);
 }
 h1 {
-  font-size: 4vw;
+  font-size: 4vh;
 }
 
 
 p {
 
-  font-size: 1.5vw;
+  font-size: 2.0vh;
 }
 
 /* strong {
@@ -80,7 +83,7 @@ a:hover {
 /* Change autocomplete styles in WebKit */
 
 form {
-  font-size: 1.5vw;
+  font-size: 2.5vh;
   text-align: right;
 }
 .input-label {
@@ -91,7 +94,7 @@ form {
 form input {
   font-family: 'Calligraffitti', cursive;
   color: rgb(120,120,120);
-  font-size: 1.5vw;
+  font-size: 2.5vh;
 }
 
 form input:focus {
@@ -101,7 +104,11 @@ form input:focus {
 textarea {
   font-family: 'Calligraffitti', cursive;
   color: rgb(120,120,120);
+  font-size: 2.5vh;
+  font-weight: bold;
+  border-right: 1px solid rgb(120,120,120) !important;
 }
+
 
 textarea:focus {
   outline-color: rgb(120,120,120)

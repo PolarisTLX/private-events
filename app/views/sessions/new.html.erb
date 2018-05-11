@@ -18,16 +18,18 @@
       <% end %>
     </div> -->
     <br/>
-    <span>Remember me?</span>
-    <div class="remember-me-div">
-        <input name="session[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="session[remember_me]" id="session_remember_me">
-        <label for="session_remember_me"></label>
+    <div class="remember-all">
+        <span class="remember-span">Remember me?</span>
+        <div class="remember-me-button">
+            <input name="session[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="session[remember_me]" id="session_remember_me">
+            <label for="session_remember_me"></label>
+        </div>
     </div>
 
-    <%= f.submit "Submit" %>
+    <%= f.submit "Submit", class: "login-submit" %>
     <br/>
+    <p class="new-user">New user? <%= link_to 'Sign up now!', signup_path %></p>
 
 <% end %>
 
-<p>New user? <%= link_to 'Sign up now!', signup_path %></p>
 </div>

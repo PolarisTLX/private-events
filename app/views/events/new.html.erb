@@ -1,4 +1,6 @@
-<h1>Create your event:</h1>
+<h1 class="title">Create your event:</h1>
+
+<div class="new-event">
 
 <% if @event.errors.any? %>
   <div id="error_explanation">
@@ -38,3 +40,5 @@
     <%= f.submit "Submit Your New Event" %>
 
 <% end %>
+
+</div>
