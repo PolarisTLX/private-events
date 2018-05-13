@@ -1,0 +1,22 @@
+<!-- needs to reveice what event it came from  -->
+
+<h4> What members will be on your guest list? </h4>
+<h4>For your event: <%= @event.title %></h4>
+
+<%= form_for @invite do |f| %>
+
+    <ul style="list-style:none">
+      <% User.all.each do |u| %>
+        <!-- Makes sure current user does not have an option to invite themselves -->
+        <% next if u == current_user %>
+        <!-- check if user has already been invited: -->
+        <% next if @event.invites.where(attendee_id: u).any? %>
+        <!-- 'nil' below keeps unchecked boxes from being sent in the params to the create action -->
+        <%= f.check_box(:attendee, {multiple: true}, u.id.to_s, nil) %>
+        <%= f.label(:attendee, u.name) %><br>
+      <% end %>
+    </ul>
+    <br/><br/>
+    <%= f.submit "Send Invites to your guests" %>
+
+<% end %>

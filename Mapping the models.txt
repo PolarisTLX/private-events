@@ -1,0 +1,32 @@
+Private Events Models:
+
+-New Users can sign up to join the site
+-User can create multiple Events
+-Users can invite multiple other Users
+-Users can attend multiple Events
+
+-Events have have many Users attending
+
+MODEL - Users:
+-name
+-email
+-password_digest
+-has_many Events created
+-has_many invites to others' Events
+
+MODEL - Events:
+-belongs_to one Host
+-title
+-description
+-date
+-Location
+-has_many Invites (each user)
+-has_many Users attending (maybe not)
+
+rails generate model Events name:string description:text location:string date:date user:references
+
+
+MODEL - Invites:
+-belongs_to Event_id (renamed to attended_event)
+-belongs_to User_id (renamed to attendee)
+-column Accepted (True/False for each User)

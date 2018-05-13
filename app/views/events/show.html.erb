@@ -1,0 +1,30 @@
+<h1><%= @event.title %></h1>
+<h3><strong>Hosted by:</strong> <%= User.find(@event.host_id).name %></h3>
+<p><strong>What:</strong> <%= @event.description %></p>
+<p><strong>Where:</strong> <%= @event.location %></p>
+<p><strong>When:</strong> <%= @event.date %></p>
+
+
+<h3><%= link_to "Invite people", new_invite_path%></h3>
+
+<div class="confirmed">
+<h4> Confirmed Attendees </h4>
+<ul style="list-style: none">
+  <% @attendees.each do |a| %> <!-- from events_controller#show -->
+    <li><%= a.name %></li>
+  <% end %>
+</ul>
+</div>
+
+<br/>
+
+<div class="unconfirmed">
+<h4> Others Invited </h4>
+<ul style="list-style: none">
+<% @invited.each do |i| %> <!-- from events_controller#show -->
+  <li><%= i.name %></li>
+<% end %>
+</ul>
+</div>
+
+<h3><%= link_to "Delete Event", event_path(@event), method: :delete %></h3>

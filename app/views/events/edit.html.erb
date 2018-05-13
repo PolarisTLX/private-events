@@ -1,0 +1,40 @@
+<h1>Edit/Update your event:</h1>
+
+<% if @event.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@event.errors.count, "error")%>
+      prevent this event from being saved:</h2>
+
+      <ul>
+        <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<%= form_for @event do |f| %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title, autocomplete: "off" %>
+
+    <br/><br/>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+
+    <br/><br/>
+
+    <%= f.label :location %>
+    <%= f.text_field :location, autocomplete: "off" %>
+
+    <br/><br/>
+
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+
+    <br/><br/>
+
+    <%= f.submit "Submit Your Event" %>
+
+<% end %>

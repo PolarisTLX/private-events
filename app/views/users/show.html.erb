@@ -1,0 +1,95 @@
+<p id="notice"><%= notice %></p>
+<div class="user-info">
+  <h2>User Info:</h2>
+  <p>
+    <strong>Name:</strong>
+    <%= @user.name %>
+
+    <br/>
+
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+
+
+  <% if @user == current_user %>
+    <%= link_to "Edit Your Profile", edit_user_path(@user)%>
+    <br/><br/>
+    <h3><%= link_to "Create New Event", new_event_path %></h3>
+  <% end %>
+</div>
+
+<!-- <div class="hosted-events">
+  <% if @user.hosted_events.count > 0 %>
+    <h2>Hosted Events:</h2>
+  <% end %>
+  <% @user.hosted_events.each do |event| %>
+  <p>
+    Title: <%= link_to event.title, event %><br/>
+    Location: <%= event.location %><br/>
+    Date: <%= event.date %>
+  </p>
+  <% end %>
+</div> -->
+
+<%  if @user == current_user %>
+  <div class="invites">
+
+    <h2>Event Invitations:</h2>
+    <% if @invites.count > 0 %>
+
+      <% @invites.each do |event| %>
+        <p>
+          Title: <%= link_to event.title, event %><br/>
+          Location: <%= event.location %><br/>
+          Date: <%= event.date %>
+        </p>
+        <h4>
+          <%= link_to "Accept Invitation",
+                edit_invite_path(event, attended_event_id: event.id, attendee_id: @user.id) %>
+        </h4>
+      <% end %>
+
+    <% end %>
+
+  </div>
+
+  <div class="upcoming-events">
+
+    <h2>Upcoming Events:</h2>
+    <% if @upcoming_events.count > 0 %>
+
+      <% @upcoming_events.each do |event| %>
+        <p>
+          Title: <%= link_to event.title, event %><br/>
+          Location: <%= event.location %><br/>
+          Date: <%= event.date %>
+        </p>
+        <h4>
+          <%= link_to "Nevermind, I don't want to go.",
+                edit_invite_path(event, attended_event_id: event.id, attendee_id: @user.id) %>
+        </h4>
+      <% end %>
+
+    <% end %>
+
+  </div>
+
+  <div class="past-events">
+
+    <h2>Past Events:</h2>
+    <% if @past_events.count > 0 %>
+
+      <% @past_events.each do |event| %>
+        <p>
+          Title: <%= link_to event.title, event %><br/>
+          Location: <%= event.location %><br/>
+          Date: <%= event.date %>
+        </p>
+      <% end %>
+
+    <% end %>
+
+  </div>
+
+<% end %>

@@ -1,0 +1,26 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.navlinks {
+  grid-area: 1 / 1 / 2 / 5;
+}
+
+.user-info {
+  grid-area: 2 / 4 / 3 / 5;
+}
+
+.past-events {
+  grid-area: 2 / 3 / 3 / 4;
+}
+
+.upcoming-events {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.invites {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.hosted-events {
+  display: none;
+}
