@@ -1,30 +1,35 @@
-<h1><%= @event.title %></h1>
-<h3><strong>Hosted by:</strong> <%= User.find(@event.host_id).name %></h3>
-<p><strong>What:</strong> <%= @event.description %></p>
-<p><strong>Where:</strong> <%= @event.location %></p>
-<p><strong>When:</strong> <%= @event.date %></p>
+<div class="event-info">
+  <h2>Event Info:</h2>
+  <h1>Title: <%= @event.title %></h1>
+  <h3><strong>Hosted by:</strong> <%= link_to User.find(@event.host_id).name, User.find(@event.host_id) %></h3>
+  <p><strong>What:</strong> <%= @event.description %></p>
+  <p><strong>Where:</strong> <%= @event.location %></p>
+  <p><strong>When:</strong> <%= @event.date %></p>
 
+  <% if current_user.id == @event.host_id %>
+  <h3><%= link_to "Invite people", new_invite_path%></h3>
+  <% end %>
 
-<h3><%= link_to "Invite people", new_invite_path%></h3>
+  <% if current_user.id == @event.host_id %>
+  <h3><%= link_to "Delete Event", event_path(@event), method: :delete %></h3>
+  <% end %>
+
+</div>
 
 <div class="confirmed">
-<h4> Confirmed Attendees </h4>
-<ul style="list-style: none">
-  <% @attendees.each do |a| %> <!-- from events_controller#show -->
-    <li><%= a.name %></li>
-  <% end %>
-</ul>
+  <h2> Confirmed Attendees ( <%= @attendees.count %> )</h2>
+  <ul style="list-style: none">
+    <% @attendees.each do |a| %> <!-- from events_controller#show -->
+      <li><%= a.name %></li>
+    <% end %>
+  </ul>
 </div>
-
-<br/>
 
 <div class="unconfirmed">
-<h4> Others Invited </h4>
-<ul style="list-style: none">
-<% @invited.each do |i| %> <!-- from events_controller#show -->
-  <li><%= i.name %></li>
-<% end %>
-</ul>
+  <h2> Others Invited ( <%= @invited.count %> )</h2>
+  <ul style="list-style: none">
+  <% @invited.each do |i| %> <!-- from events_controller#show -->
+    <li><%= i.name %></li>
+  <% end %>
+  </ul>
 </div>
-
-<h3><%= link_to "Delete Event", event_path(@event), method: :delete %></h3>

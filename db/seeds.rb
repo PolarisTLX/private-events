@@ -8,8 +8,9 @@
 
 users = User.create([{name: 'Person1', email:'p1@email.com', password: 'password'},{name: 'Person2', email:'p2@email.com', password: 'password'}])
 
-events = Event.create([{ title: "Something long enough", host_id: 1, description: "Text goes here, I hope.", location: "Somewhere", date: "2018-08-01" },
-                     { title: "This is the 2nd event", host_id: 2, description: "2nd Text goes here, I hope.", location: "2nd location", date: "2018-09-01" }])
+events = Event.create([{ title: "Something long enough", host_id: 1, description: "Text goes here, I hope.",              location: "Somewhere", date: "2018-08-01" },
+                     { title: "This is the 2nd event", host_id: 2, description: "2nd Text goes here, I hope.", location: "2nd location", date: "2018-09-01" },
+                     { title: "This is the 3rd event", host_id: 1, description: "3rd Text goes here, I hope.", location: "3rd location", date: "2018-10-31" }])
 
 # For invites, create 4 (2 events x 2 invites each):
 # Event 1: hosted by Person1, both accept.

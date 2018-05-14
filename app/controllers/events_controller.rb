@@ -2,6 +2,7 @@ class EventsController < ApplicationController
 
   # this is a filter to restrict access to only a user who is logged in.
   before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET request
   def new
@@ -81,6 +82,13 @@ class EventsController < ApplicationController
       flash[:danger] = "Please log in."
       redirect_to login_url
     end
+  end
+
+  def correct_user
+    @event = Event.find(params[:id])
+    @user = User.find(@event.host_id)
+    redirect_to(current_user) unless @user == current_user
+    # this sends a user to their own page if they try to access a different profile
   end
 
 end
