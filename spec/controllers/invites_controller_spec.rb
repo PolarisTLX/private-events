@@ -70,4 +70,6 @@ RSpec.describe InvitesController, type: :controller do
     end
   end
 
+  # test for un-accepting an event
+
 end

@@ -15,7 +15,15 @@
  */
 
 body {
-  background-color: rgb(35,35,35);
+  margin: 0;
+  /* background-color: rgb(35,35,35); */
+  background: url("dark-grey-page.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
   color: rgb(120,120,120);
   font-family: 'Calligraffitti', cursive;
   /* display: grid;
@@ -23,7 +31,7 @@ body {
   grid-template-rows: auto; */
   letter-spacing: 2;
   display: grid;
-  grid-template-columns: repeat(4, 25%);
+  grid-template-columns: repeat(5, 20%);
   grid-template-rows: auto;
 }
 
@@ -35,8 +43,39 @@ body {
   background: rgb(255,255,255); /* Gecko Browsers */
 }
 
+.pagetop {
+  display: inline;
+  grid-area: 1 / 1 / 2 / 6 ;
+  height: 6vh;
+  /* width: 100%; */
+  background-color: rgb(35,35,35);
+  margin: 0;
+  padding: 1vh 0 1vh 5vh;
+}
+.user-logo {
+  /* display: inline; */
+  height: 5vh;
+  /* padding-top: 1vh; */
+}
+.user-name {
+  display: inline;
+  font-weight: bold;
+  color: rgb(51,139,213);
+}
+.toplinks {
+  line-height: 5vh;
+  vertical-align: middle;
+  display: inline;
+}
+.toplinks a {
+  padding-left: 2vh;
+}
+
 .navlinks {
-  text-align: center;
+  grid-area: 2 / 5 / 100 / 6 ;
+  background-color: rgb(35,35,35);
+  margin: 0;
+  text-align: right;
   padding-bottom: 3vh;;
   font-size: 3vh;
 }

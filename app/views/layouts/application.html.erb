@@ -12,15 +12,31 @@
   </head>
 
   <body>
+    <div class="pagetop">
+      <% if !logged_in? %>
+          <!-- no image -->
+          <div class="toplinks">
+            <%= link_to 'Events', events_path%>
+            <%= link_to 'Log in', login_path%>
+          </div>
+      <% else %>
+          <%= image_tag("user-logo.png", alt: "user-logo", class: "user-logo") %>
+          <div class="toplinks">
+            <div class="user-name"> <%= current_user.name %> </div>
+            <%= link_to 'Log out', logout_path, method: :delete %>
+          </div>
+      <% end %>
+    </div>
+
     <p class="navlinks">
       <% if !logged_in? %>
         <%= link_to 'Events', events_path%>
-        <%= link_to 'Log in', login_path%>
       <% else %>
           <%= link_to 'Home', user_path(current_user)%>
           <%= link_to 'Events', events_path%>
-          Logged in as: <%= current_user.name %>
-          <%= link_to 'Log out', logout_path, method: :delete %>
+          <%= link_to 'Members', events_path%>
+          <%= link_to 'About', events_path%>
+          <%= link_to 'Contact', events_path%>
       <% end %>
     </p>
 
