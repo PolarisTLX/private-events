@@ -6,6 +6,7 @@
   <p><strong>Where:</strong> <%= @event.location %></p>
   <p><strong>When:</strong> <%= @event.date %></p>
 
+
   <% if current_user.id == @event.host_id %>
   <h3><%= link_to "Invite people", new_invite_path%></h3>
   <% end %>

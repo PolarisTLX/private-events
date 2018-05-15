@@ -9,6 +9,17 @@
   grid-area: 2 / 4 / 3 / 5;
 }
 
+.user-index-logo {
+  height: 12vh;
+  display: inline;
+  float: left;
+  padding-right: 2vw;
+}
+
+.index-info {
+  // display: inline; display inline shortens the border-bottom to fit the element
+}
+
 .past-events {
   grid-area: 2 / 3 / 3 / 4;
 }

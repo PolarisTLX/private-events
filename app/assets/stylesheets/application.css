@@ -31,7 +31,7 @@ body {
   grid-template-rows: auto; */
   letter-spacing: 2;
   display: grid;
-  grid-template-columns: repeat(5, 20%);
+  grid-template-columns: repeat(4, 21.5%) 14%;
   grid-template-rows: auto;
 }
 
@@ -50,6 +50,7 @@ body {
   /* width: 100%; */
   background-color: rgb(35,35,35);
   margin: 0;
+  font-size: 3.5vh;
   padding: 1vh 0 1vh 5vh;
 }
 .user-logo {
@@ -75,16 +76,20 @@ body {
   grid-area: 2 / 5 / 100 / 6 ;
   background-color: rgb(35,35,35);
   margin: 0;
+  padding: 33vh 0;
   text-align: right;
-  padding-bottom: 3vh;;
+  /* padding-bottom: 3vh;; */
   font-size: 3vh;
+  /* overflow-y: hidden; */
 }
-.navlinks p {
-}
+
 .navlinks a {
+  display: block;
+  line-height: 1.75;
   font-size: 3vh;
-  margin: 0 4vw;
+  margin: 0 3vw;
   text-decoration: none;
+  text-align: right;
 }
 /* .navlinks a:hover {
 color: rgb(51,139,213);
