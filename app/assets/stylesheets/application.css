@@ -32,7 +32,7 @@ body {
   letter-spacing: 2;
   display: grid;
   grid-template-columns: repeat(4, 21.5vw) 14vw;
-  grid-template-rows: auto;
+  grid-template-rows: 8vh auto;
 }
 
 /* overiding default highlight of selected text */
@@ -50,7 +50,7 @@ body {
 }
 .pagetop {
   display: inline;
-  grid-area: 1 / 1 / 2 / 5 ;
+  /* grid-area: 1 / 1 / 2 / 5 ; */
   height: 6vh;
   /* width: 100%; */
   /* background-color: rgba(35,35,35,1); */
@@ -61,11 +61,16 @@ body {
   padding: 1vh 0 1vh 5vh;
   /* border-bottom: 2px solid rgba(120, 120, 120, 1); */
   /* border-style: groove; */
+
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .user-logo {
   /* display: inline; */
   height: 5vh;
   /* padding-top: 1vh; */
+  transform: translateY(0.5vh);
 }
 .user-name {
   display: inline;
