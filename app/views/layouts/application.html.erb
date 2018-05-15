@@ -34,8 +34,8 @@
     <p class="navlinks">
       <% if !logged_in? %>
         <%= link_to 'Events', events_path, class: "nav-a-tags" %>
-        <%= link_to 'About', events_path, class: "nav-a-tags" %>
-        <%= link_to 'Contact', events_path, class: "nav-a-tags" %>
+        <%= link_to 'About', about_path, class: "nav-a-tags" %>
+        <%= link_to 'Contact', contact_path, class: "nav-a-tags" %>
       <% else %>
           <%= link_to 'My Events', user_path(current_user), class: "nav-a-tags" %>
           <%= link_to 'All Events', events_path, class: "nav-a-tags" %>

@@ -31,7 +31,7 @@ body {
   grid-template-rows: auto; */
   letter-spacing: 2;
   display: grid;
-  grid-template-columns: repeat(4, 21.5%) 14%;
+  grid-template-columns: repeat(4, 21.5vw) 14vw;
   grid-template-rows: auto;
 }
 
@@ -89,12 +89,19 @@ body {
 }
 
 .navlinks {
-  grid-area: 2 / 5 / 100 / 6 ;
+  /* grid-column: 5; */
+  /* grid-row: 2 / -1; */
+  /* grid-area: 2 / 5 / 100 / 6; */
+  position: fixed;
+  right: 0;
+  width: 14vw;
+  height: 100vh;
   /* background-color: rgb(35,35,35); */
   background-color: rgba(120, 120, 120, 1);
   margin: 0;
-  padding: 33vh 0;
+  padding: 40vh 0;
   text-align: right;
+  /* height: 100%; */
   /* padding-bottom: 3vh;; */
   font-size: 3vh;
   /* border-left: 5px double rgba(120, 120, 120, 1); */
