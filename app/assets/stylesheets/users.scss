@@ -24,6 +24,14 @@
   grid-area: 2 / 4 / 3 / 5;
 }
 
+.users-index {
+  grid-area: 2 / 2 / 3 / 4;
+}
+
+.users-index h2 {
+  font-size: 3.5vw;
+}
+
 .user-index-logo {
   height: 12vh;
   display: inline;

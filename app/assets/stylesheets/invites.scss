@@ -3,6 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-input[type=checkbox] {
-  visibility: visible;
+// input[type=checkbox] {
+//   visibility: visible;
+// }
+
+.invites-title {
+  grid-area: 2 / 2 / 3 / 4;
+}
+
+.invites-form {
+  grid-area: 3 / 2 / 4 / 4;
+  // margin: auto;
+}
+
+.invites-form label {
+  // text-align: left;
+  margin-right: 20vw;
+}
+
+.invites-form input[type=submit] {
+  // text-align: left;
+  margin-right: 15vw;
 }

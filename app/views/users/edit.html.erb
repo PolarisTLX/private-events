@@ -1,35 +1,39 @@
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error")%>
-      prevent this post from being saved:</h2>
+<h1 class="title">Edit your Private Events profile</h1>
 
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-<% end %>
+<div class="signup-form">
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error")%>
+        prevent this post from being saved:</h2>
 
-<%= form_for @user do |f| %>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
 
-    <%= f.label :name %>
-    <%= f.text_field :name, autocomplete: "off" %>
-    <br/>
+  <%= form_for @user do |f| %>
 
-    <%= f.label :email %>
-    <%= f.text_field :email, autocomplete: "off" %>
-    <br/>
+      <%= f.label :name %>
+      <%= f.text_field :name, autocomplete: "off" %>
+      <br/>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <br/>
+      <%= f.label :email %>
+      <%= f.text_field :email, autocomplete: "off" %>
+      <br/>
 
-    <%= f.label :password_confirmation, "Confirm" %>
-    <%= f.password_field :password_confirmation %>
-    <br/><br/>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      <br/>
 
-    <%= f.submit "Submit" %>
-    <br/>
+      <%= f.label :password_confirmation, "Confirm" %>
+      <%= f.password_field :password_confirmation %>
+      <br/><br/>
 
-<% end %>
+      <%= f.submit "Submit" %>
+      <br/>
+
+  <% end %>
+</div>
