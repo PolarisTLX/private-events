@@ -1,3 +1,8 @@
+<!-- <div class="signup-page"> -->
+
+  <h1 class="title">Sign up to become a member of Private Events</h1>
+
+<div class="signup-form">
 <% if @user.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@user.errors.count, "error")%>
@@ -33,3 +38,5 @@
     <br/>
 
 <% end %>
+</div>
+<!-- </div> -->
