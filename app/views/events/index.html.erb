@@ -1,30 +1,38 @@
 <div class="past">
-<% if @past_events.count > 0 %>
-  <h2>Past Events:</h2>
-<% end %>
-<% @past_events.each do |event| %>
-  <h3><strong>Event:</strong> <%= link_to  event.title, event %></h3>
-  <% if logged_in? %>
-  <h4><strong>Host:</strong> <%= User.find(event.host_id).name %><h4>
+
+  <% if @past_events.count > 0 %>
+    <h2>Past Events: &nbsp;</h2>
+  <% end %>
+
+  <% @past_events.each do |event| %>
+    <h3><strong>Event: &nbsp;</strong> <%= link_to  event.title, event %> &nbsp; ( <%= event.attendees.count %> invited )</h3>
+
+    <% if logged_in? %>
+      <h4><strong>Host: &nbsp;</strong> <%= User.find(event.host_id).name %><h4>
     <% end %>
-  <h4><strong>Where:</strong> <%= event.location %></h4>
-  <h4><strong>When:</strong> <%= event.date %></h4>
-  <br/>
-<% end %>
+
+    <h4><strong>Where: &nbsp;</strong> <%= event.location %></h4>
+    <h4><strong>When: &nbsp;</strong> <%= event.date %></h4>
+  <% end %>
+
 </div>
 
 
 <div class="upcoming">
-<% if @upcoming_events.count > 0 %>
-  <h2>Upcoming Events:</h2>
-<% end %>
-<% @upcoming_events.each do |event| %>
-  <h3><strong>Event:</strong> <%= link_to  event.title, event %></h3>
-  <% if logged_in? %>
-  <h4><strong>Host:</strong> <%= User.find(event.host_id).name %><h4>
+
+  <% if @upcoming_events.count > 0 %>
+    <h2>Upcoming Events:</h2>
+  <% end %>
+
+  <% @upcoming_events.each do |event| %>
+    <h3><strong>Event: &nbsp;</strong> <%= link_to  event.title, event %> &nbsp; ( <%= event.attendees.count %> invited )</h3>
+
+    <% if logged_in? %>
+      <h4><strong>Host: &nbsp;</strong> <%= User.find(event.host_id).name %><h4>
     <% end %>
-  <h4><strong>Where:</strong> <%= event.location %></h4>
-  <h4><strong>When:</strong> <%= event.date %></h4>
-  <br/>
-<% end %>
+
+    <h4><strong>Where: &nbsp;</strong> <%= event.location %></h4>
+    <h4><strong>When: &nbsp;</strong> <%= event.date %></h4>
+  <% end %>
+
 </div>

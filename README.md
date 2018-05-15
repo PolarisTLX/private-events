@@ -1,9 +1,9 @@
 # README
 
-# Private Events - Ruby on Rails application to practice ActiveRecord Associations
+# Members Only! - Ruby on Rails application to practice user authentication and authorization
 
-This is the for The Odin Project - Rails Course:
-[*Private Events*](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations).
+This is for The Odin Project - Rails Course:
+[*Members Only!*](https://www.theodinproject.com/courses/ruby-on-rails/lessons/authentication).
 
 ## Getting started
 
@@ -33,4 +33,17 @@ Finally run the app in a local server:
 $ rails server
 ```
 
-Open your browser at "localhost:3000"
+Open your browser at "localhost:3000".
+
+
+To run the RSpec test suite, first run:
+
+```
+$ rails db:seed ENV=test
+```
+
+Then run:
+
+```
+$ rspec
+```

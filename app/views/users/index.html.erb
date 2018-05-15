@@ -1,0 +1,15 @@
+<div class="past">
+
+  <h2>Members Index:</h2>
+
+  <% @users.each do |user| %>
+  <%= image_tag("user-logo.png", alt: "user-logo", class: "user-index-logo") %>
+    <h3 class="index-info">
+      <strong>Name:</strong> <%= link_to  user.name, user %>
+      <p>
+        <strong>Confirmed events:</strong> <%= user.attended_events.where('invites.accepted = ?', true).count %>
+      </p>
+    </h3>
+  <% end %>
+
+</div>

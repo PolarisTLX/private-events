@@ -2,11 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .navlinks {
-  grid-area: 1 / 1 / 2 / 5;
+  // grid-area: 1 / 1 / 2 / 5;
 }
 
 .user-info {
   grid-area: 2 / 4 / 3 / 5;
+}
+
+.user-index-logo {
+  height: 12vh;
+  display: inline;
+  float: left;
+  padding-right: 2vw;
+}
+
+.index-info {
+  // display: inline; display inline shortens the border-bottom to fit the element
 }
 
 .past-events {
