@@ -59,7 +59,7 @@ body {
   font-size: 3.5vh;
   color: rgba(35,35,35,1);
   padding: 1vh 0 1vh 5vh;
-  border-bottom: 2px solid rgba(120, 120, 120, 1);
+  /* border-bottom: 2px solid rgba(120, 120, 120, 1); */
   /* border-style: groove; */
 }
 .user-logo {
@@ -70,7 +70,7 @@ body {
 .user-name {
   display: inline;
   font-weight: bold;
-  color: rgb(51,139,213);
+  color: white;
 }
 .toplinks {
   line-height: 5vh;
@@ -80,6 +80,12 @@ body {
 .toplinks a {
   padding-left: 2vh;
   color: rgba(35,35,35,1) !important;
+}
+.toplinks a:hover {
+  color: white !important;
+}
+.nav-a-tags:hover {
+  color: white !important;
 }
 
 .navlinks {
@@ -91,7 +97,7 @@ body {
   text-align: right;
   /* padding-bottom: 3vh;; */
   font-size: 3vh;
-  border-left: 5px double rgba(120, 120, 120, 1);
+  /* border-left: 5px double rgba(120, 120, 120, 1); */
   /* overflow-y: hidden; */
 }
 

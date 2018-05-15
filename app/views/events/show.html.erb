@@ -18,7 +18,7 @@
 </div>
 
 <div class="confirmed">
-  <h2> Confirmed Attendees ( <%= @attendees.count %> )</h2>
+  <h2> Confirmed Attendees &nbsp; ( <%= @attendees.count %> )</h2>
   <ul style="list-style: none">
     <% @attendees.each do |a| %> <!-- from events_controller#show -->
       <li><%= a.name %></li>
@@ -27,7 +27,7 @@
 </div>
 
 <div class="unconfirmed">
-  <h2> Others Invited ( <%= @invited.count %> )</h2>
+  <h2> Others Invited &nbsp; ( <%= @invited.count %> )</h2>
   <ul style="list-style: none">
   <% @invited.each do |i| %> <!-- from events_controller#show -->
     <li><%= i.name %></li>
