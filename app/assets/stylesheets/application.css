@@ -17,7 +17,7 @@
 body {
   margin: 0;
   /* background-color: rgb(35,35,35); */
-  background: url("dark-grey-page.jpg") no-repeat center center fixed;
+  background: url("dark-grey-paper2.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -42,16 +42,25 @@ body {
 ::-moz-selection {
   background: rgb(255,255,255); /* Gecko Browsers */
 }
-
+.top-corner {
+  grid-area: 1 / 5 / 2 / 6 ;
+  width: 100%;
+  /* background-color: rgba(35,35,35,1); */
+  background-color: rgba(120, 120, 120, 1);
+}
 .pagetop {
   display: inline;
-  grid-area: 1 / 1 / 2 / 6 ;
+  grid-area: 1 / 1 / 2 / 5 ;
   height: 6vh;
   /* width: 100%; */
-  background-color: rgb(35,35,35);
+  /* background-color: rgba(35,35,35,1); */
+  background-color: rgba(120,120,120,1);
   margin: 0;
   font-size: 3.5vh;
+  color: rgba(35,35,35,1);
   padding: 1vh 0 1vh 5vh;
+  border-bottom: 2px solid rgba(120, 120, 120, 1);
+  /* border-style: groove; */
 }
 .user-logo {
   /* display: inline; */
@@ -70,16 +79,19 @@ body {
 }
 .toplinks a {
   padding-left: 2vh;
+  color: rgba(35,35,35,1) !important;
 }
 
 .navlinks {
   grid-area: 2 / 5 / 100 / 6 ;
-  background-color: rgb(35,35,35);
+  /* background-color: rgb(35,35,35); */
+  background-color: rgba(120, 120, 120, 1);
   margin: 0;
   padding: 33vh 0;
   text-align: right;
   /* padding-bottom: 3vh;; */
   font-size: 3vh;
+  border-left: 5px double rgba(120, 120, 120, 1);
   /* overflow-y: hidden; */
 }
 
@@ -90,6 +102,7 @@ body {
   margin: 0 3vw;
   text-decoration: none;
   text-align: right;
+  color: rgb(35,35,35) !important;
 }
 /* .navlinks a:hover {
 color: rgb(51,139,213);
