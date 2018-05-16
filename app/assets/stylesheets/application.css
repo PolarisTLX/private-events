@@ -31,7 +31,7 @@ body {
   grid-template-rows: auto; */
   letter-spacing: 2;
   display: grid;
-  grid-template-columns: repeat(4, 21.5vw) 14vw;
+  grid-template-columns: repeat(4, 1fr) 23vh;
   grid-template-rows: 8vh auto;
 }
 
@@ -99,7 +99,7 @@ body {
   /* grid-area: 2 / 5 / 100 / 6; */
   position: fixed;
   right: 0;
-  width: 14vw;
+  width: 23vh;  /* THIS NEEDS TO BE SAME AS LAST COLUMN IN AREA DEFINITION ABOVE */
   height: 100vh;
   /* background-color: rgb(35,35,35); */
   background-color: rgba(120, 120, 120, 1);
@@ -117,7 +117,7 @@ body {
   display: block;
   line-height: 1.75;
   font-size: 3vh;
-  margin: 0 3vw;
+  margin: 0 4vh 0 0;
   text-decoration: none;
   text-align: right;
   color: rgb(35,35,35) !important;
