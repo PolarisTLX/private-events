@@ -6,7 +6,6 @@
 
 <div class="invites-form">
   <%= form_for @invite do |f| %>
-
       <ul style="list-style:none">
         <% User.all.each do |u| %>
           <!-- Makes sure current user does not have an option to invite themselves -->

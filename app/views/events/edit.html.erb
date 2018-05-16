@@ -1,40 +1,44 @@
-<h1>Edit/Update your event:</h1>
+<h1 class="title">Edit/Update your event:</h1>
 
-<% if @event.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@event.errors.count, "error")%>
-      prevent this event from being saved:</h2>
+<div class="new-event">
 
-      <ul>
-        <% @event.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-<% end %>
+  <% if @event.errors.any? %>
+    <div id="event_error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error")%>
+        prevented your changes from being saved:</h2>
 
-<%= form_for @event do |f| %>
+        <ul>
+          <% @event.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
 
-    <%= f.label :title %>
-    <%= f.text_field :title, autocomplete: "off" %>
+  <%= form_for @event do |f| %>
 
-    <br/><br/>
+      <%= f.label :title %>
+      <%= f.text_field :title, autocomplete: "off" %>
 
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+      <br/><br/>
 
-    <br/><br/>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
 
-    <%= f.label :location %>
-    <%= f.text_field :location, autocomplete: "off" %>
+      <br/><br/>
 
-    <br/><br/>
+      <%= f.label :location %>
+      <%= f.text_field :location, autocomplete: "off" %>
 
-    <%= f.label :date %>
-    <%= f.date_field :date %>
+      <br/><br/>
 
-    <br/><br/>
+      <%= f.label :date %>
+      <%= f.date_field :date %>
 
-    <%= f.submit "Submit Your Event" %>
+      <br/><br/>
 
-<% end %>
+      <%= f.submit "Submit Your Event" %>
+
+  <% end %>
+
+</div>

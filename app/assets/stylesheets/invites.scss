@@ -16,12 +16,13 @@
   // margin: auto;
 }
 
-.invites-form label {
-  // text-align: left;
-  margin-right: 20vw;
+.invites-form form {
+  text-align: left !important;
+  margin-left: 15vw;
+  // margin-right: 20vw;
 }
 
 .invites-form input[type=submit] {
   // text-align: left;
-  margin-right: 15vw;
+  // margin-left: 15vw;
 }

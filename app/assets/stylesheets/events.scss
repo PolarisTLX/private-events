@@ -10,6 +10,7 @@ body {
   //   "past past upcoming upcoming";
 }
 
+
 .navlinks {
   // grid-area: 1 / 1 / 2 / 5;
 }
@@ -43,9 +44,16 @@ textarea {
   text-align: center;
 }
 
+#event_error_explanation {
+  // margin-right: -12vw;
+  margin-top: 0vw !important;
+  transform: translateX(10vw);
+  font-size: 2vh;
+}
+
 .new-event {
   grid-area: 3 / 2 / 4 / 4;
-  transform: translateX(-10vw);
+  transform: translateX(-15vw);
 }
 
 .navlinks {

@@ -13,7 +13,6 @@ body {
 
 .login {
   grid-area: 3 / 2 / 4 / 4;
-  grid-area: 3 / 2 / 4 / 4;
   padding-top: 5vh;
   transform: translateX(-15vw);
   // padding-left: 20vw;
@@ -110,11 +109,11 @@ body {
 // }
 
 .login-submit {
-  transform: translate(-18vh);
+  transform: translate(-10vh);
 }
 
 .new-user {
   // text-align: center;
-  transform: translate(-13vh);
+  transform: translate(-5vh);
 
 }

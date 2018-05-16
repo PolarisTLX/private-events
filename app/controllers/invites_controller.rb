@@ -19,9 +19,11 @@ class InvitesController < ApplicationController
   def create
     # this is to carry over the event that these invites will be associated with:
     @event = Event.find(session[:event_id])
-    params[:invite][:attendee].each do |i|
-      invite = @event.invites.build(attendee_id: i.to_i)
-      invite.save
+    unless params[:invite].nil? # If no boxes are checked, just don't create any invites.
+      params[:invite][:attendee].each do |i|
+        invite = @event.invites.build(attendee_id: i.to_i)
+        invite.save
+      end
     end
 
     redirect_to @event
