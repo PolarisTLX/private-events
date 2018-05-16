@@ -195,6 +195,9 @@ a:hover {
   text-align: center;
   font-weight: bold;
 }
+.alert-success {
+  color: rgb(51,139,213);
+}
 
 
 form {
