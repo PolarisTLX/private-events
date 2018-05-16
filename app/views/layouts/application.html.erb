@@ -24,7 +24,7 @@
           <!-- Will be user's avatar -->
           <%= image_tag("user-logo-transparent2.png", alt: "user-logo", class: "user-logo") %>
           <div class="toplinks">
-            <div class="user-name"> <%= current_user.name %> </div>
+            <div class="user-name"> <%= link_to current_user.name, current_user %> </div>
             <%= link_to 'Log out', logout_path, method: :delete %>
           </div>
       <% end %>

@@ -11,9 +11,9 @@
   margin-top: 5vw;
 }
 .signup-form {
-  grid-area: 3 / 2 / 4 / 4;
+  grid-area: 3 / 1 / 4 / 4;
   margin-top: 5vw;
-  margin-right: 15vw;
+  margin-right: 10vw;
 }
 
 .navlinks {
@@ -43,16 +43,32 @@
   // display: inline; display inline shortens the border-bottom to fit the element
 }
 
-.past-events {
-  grid-area: 2 / 3 / 3 / 4;
+
+.invites, .upcoming-events, .past-events {
+  margin-left: 1vw;
+}
+.invites p, .upcoming-events p, .past-events p {
+  margin-left: 1vw;
+}
+.invites h4, .upcoming-events h4, .past-events h4 {
+  // color: white !important;
+  font-size: 2.5vh;
+  margin-left: 1vw;
 }
 
-.upcoming-events {
-  grid-area: 2 / 2 / 3 / 3;
+.user-info {
+  margin-left: 1vw;
+  margin-right: 1vw;
 }
 
 .invites {
   grid-area: 2 / 1 / 3 / 2;
+}
+.upcoming-events {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.past-events {
+  grid-area: 2 / 3 / 3 / 4;
 }
 
 .hosted-events {

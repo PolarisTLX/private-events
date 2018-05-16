@@ -75,8 +75,8 @@ body {
 .user-name {
   display: inline;
   font-weight: bold;
-  color: white;
 }
+
 .toplinks {
   line-height: 5vh;
   vertical-align: middle;
@@ -85,6 +85,10 @@ body {
 .toplinks a {
   padding-left: 2vh;
   color: rgba(35,35,35,1) !important;
+}
+/* THESE TWO NEED TO BE IN THIS ORDER */
+.user-name a {
+  color: white !important;
 }
 .toplinks a:hover {
   color: white !important;
@@ -153,9 +157,11 @@ p, li {
 
 a {
   text-decoration: none;
+  color: white;
 }
 a:visited {
-  color: rgb(120,120,120)
+  /* color: rgb(120,120,120) */
+  color: white;
 }
 
 a:hover {

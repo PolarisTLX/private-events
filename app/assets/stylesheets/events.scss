@@ -66,10 +66,25 @@ textarea {
 
 .confirmed {
   grid-area: 2 / 1 / 3 / 2;
+  width: 150%;
 }
 
 .unconfirmed {
   grid-area: 2 / 2 / 3 / 4;
+  margin-left: 25%;
+  width: 150%;
+}
+
+.confirmed, .unconfirmed, .event-info {
+  margin-left: 1vw;
+}
+.confirmed p, .unconfirmed p, .event-info p {
+  margin-left: 1vw;
+}
+.confirmed h4, .unconfirmed h4, .event-info h4 {
+  // color: white !important;
+  font-size: 2.5vh;
+  margin-left: 1vw;
 }
 
 .unconfirmed li {
