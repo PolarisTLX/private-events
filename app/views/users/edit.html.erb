@@ -2,7 +2,7 @@
 
 <div class="signup-form">
   <% if @user.errors.any? %>
-    <div id="error_explanation">
+    <div id="user-error-explanation">
       <h2><%= pluralize(@user.errors.count, "error")%>
         prevented your changes from being saved:</h2>
 

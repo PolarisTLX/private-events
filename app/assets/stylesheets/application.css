@@ -145,6 +145,7 @@ h2, h3 {
 h2 {
   text-align: center;
   margin-bottom: 5vh;
+  font-size: 4vh;
 }
 
 p, li {
@@ -169,18 +170,17 @@ a:hover {
   /* background-color: rgb(51,139,213); */
 }
 
-/* Change autocomplete styles in WebKit */
-#error_explanation {
+#error-explanation {
   margin-right: -12vw;
   margin-top: -5vw;
   font-size: 2vh;
 }
 
-#error_explanation li, #error_explanation h2 {
+#error-explanation li, #error-explanation h2 {
   color: rgb(255,0,0) !important;
 }
 
-#error_explanation li {
+#error-explanation li {
   margin-left: 12vw;
 }
 

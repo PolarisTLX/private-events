@@ -1,5 +1,5 @@
 <div class="confirmed">
-  <h2> Confirmed Attendees &nbsp;( <%= @attendees.count %> )</h2>
+  <h2> Attending &nbsp;( <%= @attendees.count %> )</h2>
   <ul style="list-style: none">
     <% @attendees.each do |a| %> <!-- from events_controller#show -->
     <li><%= a.name %></li>

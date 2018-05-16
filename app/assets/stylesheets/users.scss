@@ -74,3 +74,19 @@
 .hosted-events {
   display: none;
 }
+
+
+#user-error-explanation {
+  margin-right: -12vw;
+  margin-left: 20vw;
+  margin-top: -5vw;
+  font-size: 2vh;
+}
+
+#user-error-explanation li, #user-error-explanation h2 {
+  color: rgb(255,0,0) !important;
+}
+
+#user-error-explanation li {
+  margin-left: 8vw;
+}
