@@ -1,9 +1,9 @@
 # README
 
-# Members Only! - Ruby on Rails application to practice user authentication and authorization
+# Private Events - Ruby on Rails application to practice user authentication and authorization
 
 This is for The Odin Project - Rails Course:
-[*Members Only!*](https://www.theodinproject.com/courses/ruby-on-rails/lessons/authentication).
+[*Project 2 - Private Events*](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations).
 
 ## Getting started
 
