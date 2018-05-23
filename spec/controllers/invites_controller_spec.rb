@@ -30,11 +30,9 @@ RSpec.describe InvitesController, type: :controller do
             end
           end
 
-          describe 'when new invite info is NOT invalid' do
-            skip it 'does NOT create a new invite' do
-              log_in(user)
-              session[:event_id] = event.id
-              expect { post :create, params: { invite: { attendee: [3] } } }.to change{Invite.count}.by(0)
+          describe 'when new invite info is NOT valid' do
+            it 'does NOT create a new invite' do
+              expect { post :create, params: { invite: { attendee: [3], event_id: event.id } } }.to change{Invite.count}.by(0)
             end
           end
 
