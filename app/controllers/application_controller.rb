@@ -8,6 +8,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def require_logged_out
+    if logged_in?
+      redirect_to current_user
+    end
+  end
+
   def check_correct_user
     @user = User.find(params[:id])
     redirect_to(current_user) unless @user == current_user
