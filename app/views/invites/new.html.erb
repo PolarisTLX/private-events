@@ -18,6 +18,8 @@
         <% end %>
       </ul>
       <br/><br/>
+
+      <%= f.hidden_field(:event_id, value: @event.id) %>
       <%= f.submit "Send Invites to your guests" %>
 
   <% end %>
