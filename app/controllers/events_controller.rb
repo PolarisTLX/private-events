@@ -1,25 +1,17 @@
 class EventsController < ApplicationController
 
-  # this is a filter to restrict access to only a user who is logged in.
   before_action :require_log_in, only: [:new, :show, :create, :edit, :update, :destroy]
   before_action :check_correct_user, only: [:edit, :update, :destroy]
 
-  # GET request
   def new
     @event = Event.new
   end
 
-  # GET request
   def show
-    @event = Event.find(params[:id])
-    @attendees = @event.attendees.where("invites.accepted = ?", true)
-    @invited = @event.attendees.where("invites.accepted = ?", false)
-    # need to store event to carry over to invite guests page:
-    # need to store a cookie to do this
-    # session[:event_id] = @event.id
+    @attendees = event.attendees.where("invites.accepted = ?", true)
+    @invited = event.attendees.where("invites.accepted = ?", false)
   end
 
-  # POST request
   def create
     @event = current_user.hosted_events.build(event_params)
 
@@ -31,18 +23,14 @@ class EventsController < ApplicationController
     end
   end
 
-  # GET request
   def edit
-    find_event
+    event
   end
 
-  # UPDATE request
   def update
-    find_event
-    if @event.update_attributes(event_params)
-      # handle successful update
+    if event.update_attributes(event_params)
       flash[:success] = "Event updated"
-      redirect_to @event
+      redirect_to event
     else
       render 'edit'
     end
@@ -66,7 +54,7 @@ class EventsController < ApplicationController
     params.require(:event).permit(:title, :description, :location, :date)
   end
 
-  def find_event
+  def event
     @event ||= Event.find(params[:id])
   end
 
