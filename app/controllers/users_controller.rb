@@ -1,17 +1,14 @@
 class UsersController < ApplicationController
 
-  # filter to redirect user to log-in page if they are not yet logged in and they are trying to access the edit or update
-  before_action :logged_in_user, only: [:edit, :update]
+  before_action :require_log_in, only: [:edit, :update]
 
-  # filter to give specific access to each user
-  before_action :correct_user, only: [:edit, :update]
+  before_action :check_correct_user, only: [:edit, :update]
+  before_action :require_logged_out, only: [:new, :create]
 
-  # GET action to show the new user sign-up page
   def new
     @user = User.new
   end
 
-  # POST action to save a new created user from above
   def create
     @user = User.new(user_params)
 
@@ -24,7 +21,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET action to show the profile of an existing user
   def show
     @user = User.find(params[:id])
     @invites = @user.attended_events.where("invites.accepted = ?", false).upcoming
@@ -60,20 +56,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
-
-  # Authorisation to control which logged-in user can see what
-  def logged_in_user
-    unless logged_in?
-      flash[:danger] = "Please log in."
-      redirect_to login_url
-    end
-  end
-
-  def correct_user
-    @user = User.find(params[:id])
-    redirect_to(current_user) unless @user == current_user
-    # this sends a user to their own page if they try to access a different profile
   end
 
 end

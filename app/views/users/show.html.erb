@@ -46,7 +46,8 @@
         </p>
         <h4>
           <%= link_to "Accept Invitation",
-                edit_invite_path(event, attended_event_id: event.id, attendee_id: @user.id) %>
+              invite_path(event, attended_event_id: event.id, attendee_id: @user.id),
+              method: :put %>
         </h4>
       <% end %>
 
@@ -67,7 +68,8 @@
         </p>
         <h4>
           <%= link_to "Nevermind, I don't want to go.",
-                edit_invite_path(event, attended_event_id: event.id, attendee_id: @user.id) %>
+              invite_path(event, attended_event_id: event.id, attendee_id: @user.id),
+              method: :put %>
         </h4>
       <% end %>
 
