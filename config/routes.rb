@@ -18,8 +18,9 @@ Rails.application.routes.draw do
 
   resources :events
   resources :events do
-    resources :invites, only: [:new]
+    resources :invites, only: [:new, :create]
   end
 
-  resources :invites, only: [:new, :create, :update]
+  resources :invites, only: [:update]
+
 end

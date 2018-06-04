@@ -25,14 +25,14 @@ RSpec.describe InvitesController, type: :controller do
 
           describe 'when new invite info is valid' do
             it 'creates the new invite and redirects back to event page' do
-              expect { post :create, params: { invite: { attendee: [1, 2], event_id: event.id } } }.to change{Invite.count}.by(2)
+              expect { post :create, params: { event_id: event.id, invite: { attendee: [1, 2] } } }.to change{Invite.count}.by(2)
               expect(response).to redirect_to(event)
             end
           end
 
           describe 'when new invite info is NOT valid' do
             it 'does NOT create a new invite' do
-              expect { post :create, params: { invite: { attendee: [3], event_id: event.id } } }.to change{Invite.count}.by(0)
+              expect { post :create, params: { event_id: event.id, invite: { attendee: [3] } } }.to change{Invite.count}.by(0)
             end
           end
 
@@ -69,7 +69,7 @@ RSpec.describe InvitesController, type: :controller do
 
     describe 'POST #create' do
       it 'invite is not created and user is redirected to login page' do
-        expect { post :create, params: { invite: { attendee: [1, 2], event_id: event.id } } }.to change{Invite.count}.by(0)
+        expect { post :create, params: { event_id: event.id, invite: { attendee: [1, 2] } } }.to change{Invite.count}.by(0)
         expect(response).to redirect_to(login_url)
       end
     end

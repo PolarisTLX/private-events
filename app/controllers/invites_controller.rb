@@ -8,7 +8,8 @@ class InvitesController < ApplicationController
   end
 
   def create
-    @event = Event.find(params[:invite][:event_id])
+    @event = Event.find(params[:event_id])
+    #@event = Event.find(params[:invite][:event_id])
     unless params[:invite][:attendee].nil? # If no boxes are checked, just don't create any invites.
       params[:invite][:attendee].each do |i|
         invite = @event.invites.build(attendee_id: i.to_i)
