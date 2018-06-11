@@ -2,8 +2,6 @@
 
 # Private Events - Ruby on Rails application to practice user authentication and authorization
 
-This is for The Odin Project - Rails Course:
-[*Project 2 - Private Events*](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations).
 
 Check out the live version on Heroku: https://safe-earth-48418.herokuapp.com/
 =======
@@ -50,3 +48,9 @@ Then run:
 ```
 $ rspec
 ```
+
+
+## Authors
+
+* **Kyle Lemon** - [jklemon17](https://github.com/jklemon17)
+* **Paul Rail** - [PolarisTLX](https://github.com/PolarisTLX)
